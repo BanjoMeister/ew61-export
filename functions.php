@@ -390,7 +390,7 @@ function generateRandomHex($number = 1)
 function convert_non_ascii_chars_to_hex($text)
 {
     $text = utf8_decode(mb_convert_encoding($text, "UTF-8"));
-    $characters = utf8_decode(mb_convert_encoding("æøåÆØÅ", "UTF-8"));
+    $characters = utf8_decode(mb_convert_encoding("æøåðíúóáýéþöÆØÅÐÍÚÓÁÝÉÞÖ", "UTF-8"));
     foreach (str_split($characters) as $char) {
         $converted_char = '\\\'' . bin2hex($char);
         $text = str_replace($char, $converted_char, $text);
